@@ -49,6 +49,17 @@ def data_loader() -> Annotated[DatasetDict, "dataset"]:
         ["airline_sentiment_confidence", "negativereason_confidence"]
     )
 
+    # Sample 20% of the data randomly for the demo
+    def sample_dataset(dataset, sample_rate=0.2):
+        sampled_dataset = DatasetDict()
+        for split in dataset.keys():
+            split_size = len(dataset[split])
+            indices = np.random.choice(split_size, int(split_size * sample_rate), replace=False)
+            sampled_dataset[split] = dataset[split].select(indices)
+        return sampled_dataset
+
+    dataset = sample_dataset(dataset)
+    
     # Log the dataset and sample examples
     logger.info(dataset)
     logger.info(
