@@ -120,7 +120,7 @@
 </details>
 <br />
 
-# 🤖 Huggingface Model to Sagemaker Endpoint: MLOps with ZenML
+# 🤖 Huggingface Model to Sagemaker Endpoint: Automated MLOps with ZenML
 
 While almost every Huggingface model can be easily deployed to AWS Sagemaker endpoints with a few lines of code, it is often desirous to automate this flow, and have this process track the entire lineage of the model as it goes from training to production.
 
