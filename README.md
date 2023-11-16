@@ -199,7 +199,6 @@ zenml stack hf-sagekamer-local
 
 <details>
 <summary><h3>Set up AWS access</h3></summary>
-## 
 
 To deploy to AWS SageMaker, your local AWS client needs the necessary permissions. Ensure that you have been granted SageMaker access on your AWS account. For more information about configuring AWS for programmatic access, refer to the [AWS documentation on setting up the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html).
 
