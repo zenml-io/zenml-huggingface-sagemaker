@@ -285,16 +285,16 @@ Note that if the `dataset-artifact-id` and `tokenizer-artifact-id` are not speci
 
 This will train a model from Huggingface and register a new ZenML model on the Model Control Plane:
 
-<img src="assets/mcp_1.png" alt="ZenML Model Control Plane" width="600">
+<img src="assets/mcp_1.png" alt="ZenML Model Control Plane" width="800">
 
 Please note the above screens are a cloud-only feature in [ZenML Cloud](https://zenml.io/cloud), and
 the CLI `zenml models list` should be used instead for OSS users.
 
 At the end of the pipeline, the model will also be pushed the Huggingface, and a link estabilished between the ZenML Control Plane and the Huggingface model repository.
 
-<img src="assets/hf_repo_commit.png" alt="Huggingface Repo" width="600">
+<img src="assets/hf_repo_commit.png" alt="Huggingface Repo" width="800">
 
-<img src="assets/training_pipeline_with_hf.png" alt="Training Pipeline with HF" width="600">
+<img src="assets/training_pipeline_with_hf.png" alt="Training Pipeline with HF" width="800">
 
 Notice the linkage of the revision made on Huggingface to the metadata tracked on the ZenML pipeline. This estabilishes lineage.
 
@@ -312,13 +312,13 @@ python run.py --promoting-pipeline --no-cache
 
 This pipeline finds the best model from the last pipelines that were run, and promotes it to production. That simply means its marked as production in the Model Control Plane:
 
-<img src="assets/mcp_2.png" alt="Model versions" width="600">
+<img src="assets/mcp_2.png" alt="Model versions" width="800">
 
 #### 💯 Step 4: Deploy the model
 
 Finally, when the time is right, its time to deploy the latest `Production` model with the deploymnet pipeline.
 
-<img src="assets/deploying_pipeline_overview.png" alt="Deploying pipeline" width="600">
+<img src="assets/deploying_pipeline_overview.png" alt="Deploying pipeline" width="800">
 
 ```shell
 python run.py --deploying-pipeline
