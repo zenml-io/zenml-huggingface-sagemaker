@@ -238,17 +238,44 @@ If you're note the notebook type, you can use this README to run the pipelines o
 
 <summary><h3>Instructions to run locally</h3></summary>
 
+At any time, you can look at the CLI help to see what you can do with the project:
+  
+```shell
+python run.py --help
+```
+
+Let's walk through the process one by one:
+
 #### 👶 Step 1: Start with feature engineering
+
+The first pipeline is the feature engineering pipeline. This pipeline loads some data from
+huggingface and uses a base tokenizer to create a tokenized dataset.
+
+<img src="pipelines_feature_eng.png" alt="Feature engineering pipeline" width="600">
+
+```shell
+python run.py --feature-pipeline --no-cache
+```
+
+Each time you run this pipeline, a new base tokenizer and tokenized dataset is produced.
+In the dashboard, you can click on these artifacts and note their ID's, as they will be used
+downstream in the training pipeline.
 
 #### 💪 Step 2: Train the model
 
 Next, you should look at the CLI help to see what you can do with the project:
   
 ```shell
-python run.py --help
-
 python run.py --training-pipeline --num-epochs 1 --train-batch-size 128 --eval-batch-size 12
 ```
+
+Or if you'd like to use a specific version of data from the `feature_engineering_pipeline`, you can pass them into the CLI as follows:
+
+```shell
+python run.py --training-pipeline --num-epochs 2 --train-batch-size 32 --eval-batch-size 32 --dataset-artifact-id 678986c4-11f8-442c-9b9a-3c32ab454e02 --tokenizer-artifact-id 922787cb-151e-484a-8fd0-18f373a488ff
+```
+
+Note that if the `dataset-artifact-id` and `tokenizer-artifact-id` are not specified, the training pipeline simply appends the feature engineering pipeline to itself to create a fresh dataset.
 
 This will train a model from Huggingface and register a new ZenML model on the Model Control Plane:
 
@@ -265,7 +292,7 @@ At the end of the pipeline, the model will also be pushed the Huggingface, and a
 
 Notice the linkage of the revision made on Huggingface to the metadata tracked on the ZenML pipeline. This estabilishes lineage.
 
-#### 🫅 Step 3: Promote the model 
+#### 🫅 Step 3: Promote the model
 
 You can run the training pipeline a few times to produce many versions of the model. Feel free to edit the parameters accordingly.
 When the time is right, you now run the promotion pipeline:
@@ -273,7 +300,7 @@ When the time is right, you now run the promotion pipeline:
 ```shell
 python run.py --help
 
-python run.py --promoting-pipeline
+python run.py --promoting-pipeline --no-cache
 ```
 
 This pipeline finds the best model from the last pipelines that were run, and promotes it to production. That simply means its marked as production in the Model Control Plane:
