@@ -1,7 +1,7 @@
 stack_name ?= nlp_template_stack
 setup:
 	pip install -r requirements.txt
-	zenml integration install pytorch mlflow huggingface aws s3 kubeflow -y
+	zenml integration install pytorch mlflow huggingface aws s3 kubeflow slack github -y
 
 install-stack:
 	@echo "Specify stack name [$(stack_name)]: " && read input && [ -n "$$input" ] && stack_name="$$input" || stack_name="$(stack_name)" && \
