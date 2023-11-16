@@ -251,7 +251,7 @@ Let's walk through the process one by one:
 The first pipeline is the feature engineering pipeline. This pipeline loads some data from
 huggingface and uses a base tokenizer to create a tokenized dataset.
 
-<img src="pipelines_feature_eng.png" alt="Feature engineering pipeline" width="600">
+<img src="assets/pipelines_feature_eng.png" alt="Feature engineering pipeline" width="600">
 
 ```shell
 python run.py --feature-pipeline --no-cache
