@@ -130,7 +130,7 @@ This project showcases one way of using [ZenML](https://zenml.io) pipelines to a
 
 Here is an overview of the entire process:
 
-<img src="assets/pipelines_overview.png" alt="Pipelines Overview" width="800">
+<img src="assets/pipelines_overview.png" alt="Pipelines Overview" width="600">
 
 The above flow is achieved in a repeatable, fully tracked pipeline that is observable across the organization. Let's
 see how this works.
