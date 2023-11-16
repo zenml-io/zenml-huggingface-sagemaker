@@ -253,6 +253,8 @@ huggingface and uses a base tokenizer to create a tokenized dataset.
 
 <img src="assets/pipelines_feature_eng.png" alt="Feature engineering pipeline" width="400">
 
+Run it as follows:
+
 ```shell
 python run.py --feature-pipeline --no-cache
 ```
@@ -266,7 +268,9 @@ downstream in the training pipeline.
 The training pipeline trains the model on the produced data.
 
 <img src="assets/training_pipeline_overview.png" alt="Training pipeline" width="600">
-  
+
+Run it as follows:
+
 ```shell
 python run.py --training-pipeline --num-epochs 1 --train-batch-size 128 --eval-batch-size 12
 ```
