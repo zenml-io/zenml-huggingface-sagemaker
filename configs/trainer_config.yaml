@@ -28,9 +28,9 @@ settings:
       - aws
       - slack
       - github
-    requirements:
-      - torchvision
-      - sagemaker
+    # requirements:
+    #   - torchvision
+    #   - sagemaker
     dockerfile: Dockerfile
     environment:
       AWS_ACCESS_KEY_ID: "Random"
