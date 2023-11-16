@@ -1,13 +1,141 @@
-# Huggingface Model to Sagemaker Endpoint: MLOps with ZenML
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+
+<div align="center">
+
+  <!-- PROJECT LOGO -->
+  <br />
+    <a href="https://zenml.io">
+      <img alt="ZenML Logo" src="docs/book/.gitbook/assets/header.png" alt="ZenML Logo">
+    </a>
+  <br />
+
+  [![PyPi][pypi-shield]][pypi-url]
+  [![PyPi][pypiversion-shield]][pypi-url]
+  [![PyPi][downloads-shield]][downloads-url]
+  [![Contributors][contributors-shield]][contributors-url]
+  [![License][license-shield]][license-url]
+  <!-- [![Build][build-shield]][build-url] -->
+  <!-- [![CodeCov][codecov-shield]][codecov-url] -->
+
+</div>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[pypi-shield]: https://img.shields.io/pypi/pyversions/zenml?color=281158
+
+[pypi-url]: https://pypi.org/project/zenml/
+
+[pypiversion-shield]: https://img.shields.io/pypi/v/zenml?color=361776
+
+[downloads-shield]: https://img.shields.io/pypi/dm/zenml?color=431D93
+
+[downloads-url]: https://pypi.org/project/zenml/
+
+[codecov-shield]: https://img.shields.io/codecov/c/gh/zenml-io/zenml?color=7A3EF4
+
+[codecov-url]: https://codecov.io/gh/zenml-io/zenml
+
+[contributors-shield]: https://img.shields.io/github/contributors/zenml-io/zenml?color=7A3EF4
+
+[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+
+[license-shield]: https://img.shields.io/github/license/zenml-io/zenml?color=9565F6
+
+[license-url]: https://github.com/zenml-io/zenml/blob/main/LICENSE
+
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+
+[linkedin-url]: https://www.linkedin.com/company/zenml/
+
+[twitter-shield]: https://img.shields.io/twitter/follow/zenml_io?style=for-the-badge
+
+[twitter-url]: https://twitter.com/zenml_io
+
+[slack-shield]: https://img.shields.io/badge/-Slack-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+
+[slack-url]: https://zenml.io/slack-invite
+
+[build-shield]: https://img.shields.io/github/workflow/status/zenml-io/zenml/Build,%20Lint,%20Unit%20&%20Integration%20Test/develop?logo=github&style=for-the-badge
+
+[build-url]: https://github.com/zenml-io/zenml/actions/workflows/ci.yml
+
+<div align="center">
+  <h3 align="center">Build portable, production-ready MLOps pipelines.</h3>
+  <p align="center">
+    <div align="center">
+      Join our <a href="https://zenml.io/slack-invite" target="_blank">
+      <img width="18" src="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/306_Slack-512.png" alt="Slack"/>
+    <b>Slack Community</b> </a> and be part of the ZenML family.
+    </div>
+    <br />
+    <a href="https://zenml.io/features">Features</a>
+    ·
+    <a href="https://zenml.io/roadmap">Roadmap</a>
+    ·
+    <a href="https://github.com/zenml-io/zenml/issues">Report Bug</a>
+    ·
+    <a href="https://zenml.io/discussion">Vote New Features</a>
+    ·
+    <a href="https://blog.zenml.io/">Read Blog</a>
+    ·
+    <a href="https://www.zenml.io/company#team">Meet the Team</a>
+    <br />
+    <br />
+    🎉 Version 0.47.0 is out. Check out the release notes
+    <a href="https://github.com/zenml-io/zenml/releases">here</a>.
+    <br />
+    <br />
+  </p>
+</div>
+
+---
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>🏁 Table of Contents</summary>
+  <ol>
+    <li><a href="#-introduction">Introduction</a></li>
+    <li><a href="#-quickstart">Quickstart</a></li>
+    <li>
+      <a href="#-create-your-own-mlops-platform">Create your own MLOps Platform</a>
+      <ul>
+        <li><a href="##-1-deploy-zenml">Deploy ZenML</a></li>
+        <li><a href="#-2-deploy-stack-components">Deploy Stack Components</a></li>
+        <li><a href="#-3-create-a-pipeline">Create a Pipeline</a></li>
+        <li><a href="#-4-start-the-dashboard">Start the Dashboard</a></li>
+      </ul>
+    </li>
+    <li><a href="#-roadmap">Roadmap</a></li>
+    <li><a href="#-contributing-and-community">Contributing and Community</a></li>
+    <li><a href="#-getting-help">Getting Help</a></li>
+    <li><a href="#-license">License</a></li>
+  </ol>
+</details>
+
+<br />
+
+# 🤖 Huggingface Model to Sagemaker Endpoint: MLOps with ZenML
 
 While almost every Huggingface model can be easily deployed to AWS Sagemaker endpoints with a few lines of code, it is often desirous to automate this flow, and have this process track the entire lineage of the model as it goes from training to production.
 
-This project showcases one way of using ZenML pipelines to achieve this:
+This project showcases one way of using [ZenML](https://zenml.io) pipelines to achieve this:
 
-- Create and version a dataset 
-- Train/Finetune a Sentiment Analysis NLP model and push to Huggingface Hub
-- Promote this model from staging to production
-- Deploy the model at the `Production` Stage to a Sagemaker endpoint
+- Create and version a dataset in a `feature_engineering_pipeline`.
+- Train/Finetune a BERT-based Sentiment Analysis NLP model and push to Huggingface Hub in a `training_pipeline`.
+- Promote this model to `Production` by comparing to previous models in a `promotion_pipeline`.
+- Deploy the model at the `Production` Stage to a [AWS Sagemaker](https://aws.amazon.com/pm/sagemaker/) endpoint with a `deployment_pipeline`.
+
+Here is an overview of the process:
+
+
 
 The above flow is achieved in a repeatable, fully tracked pipeline that is observable across the organization. Let's
 see how this works.
