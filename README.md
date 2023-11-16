@@ -97,7 +97,7 @@
 <details>
   <summary>🏁 Table of Contents</summary>
   <ol>
-    <li><a href="#-introduction">Introduction</a></li>
+    <li><a href="#-huggingface-model-to-sagemaker-endpoint-mlops-with-zenml">Introduction</a></li>
     <li><a href="#-quickstart">Quickstart</a></li>
     <li>
       <a href="#-create-your-own-mlops-platform">Create your own MLOps Platform</a>
