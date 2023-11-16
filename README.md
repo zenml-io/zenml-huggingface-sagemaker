@@ -220,7 +220,7 @@ There are two paths you can take this with the project. You can either
 use a notebook or run it in scripts. Choose whichever path suits your learning
 style.
 
-### 📓 Use a Jupyter notebook
+### 📓 EITHER: Use a Jupyter notebook
 
 ```shell
 # Install jupyter
@@ -230,7 +230,7 @@ pip install notebook
 jupyter notebook
 ```
 
-### ✍️ Run it locally
+### ✍️ OR: Run it locally
 
 If you're note the notebook type, you can use this README to run the pipelines one by one.
 
