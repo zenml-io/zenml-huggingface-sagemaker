@@ -204,7 +204,9 @@ Replace `your_access_key_id`, `your_secret_access_key`, and `your_session_token`
 
 ## 🧑‍💻 How To Run This Project
 
-There are two paths you can take this with the project. You can 
+There are two paths you can take this with the project. You can either
+use a notebook or run it in scripts. Choose whichever path suits your learning
+style.
 
 ### 📓 Use a Jupyter notebook
 
