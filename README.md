@@ -140,9 +140,7 @@ see how this works.
 What to do first? You can start by giving the the project a quick run. The
 project is ready to be used and can run as-is without any further code
 changes! You can try it right away by installing ZenML, the needed
-ZenML integration and then calling the CLI included in the project. We also
-recommend that you start the ZenML UI locally to get a better sense of what
-is going on under the hood:
+ZenML integration and then calling the CLI included in the project.
 
 ```bash
 # Set up a Python virtual environment, if you haven't already
@@ -151,14 +149,24 @@ source .venv/bin/activate
 # Install requirements & integrations
 # Alternatively see the Makefile for commands to use
 make setup
+
 # Optionally, provision default local stack
 make install-stack
 ```
 
-This will open up the ZenML dashboard on your browser. The username should be `default` and password empty.
+After this, you should have ZenML and all of the requirements of the project installed locally.
+Next thing to do is to connect to a [deployed ZenML instance](https://docs.zenml.io/deploying-zenml/). You can
+create a free trial using [ZenML Cloud](https://cloud.zenml.io) to get setup quickly.
 
-You should now register your huggingface token, which can be found in your [settings](https://huggingface.co/settings/tokens)
-page, as a ZenML secret:
+Once you have your deployed ZenML ready, you can connect to it using:
+
+```shell
+zenml connect --url YOUR_ZENML_SERVER_URL
+```
+
+This will open up the browser for your to connect to a deployed ZenML!
+
+Finally, we need to register your Huggingface API token to run this demo. This can be found in your [settings](https://huggingface.co/settings/tokens) page. Register this as a ZenML secret with:
 
 ```shell
 zenml secret create huggingface_creds --username=HUGGINGFACE_USERNAME --token=HUGGINGFACE_TOKEN
@@ -166,15 +174,6 @@ zenml secret create huggingface_creds --username=HUGGINGFACE_USERNAME --token=HU
 
 You also need to have your local AWS CLI configured to have Sagemaker endpoint access.
 
-## A process overview
-
-There are three pipelines at play, which all use the ZenML Model Control Plane to communicate with each other.
-
-* The training pipeline, which is responsible for training the model and pushing to Huggingface.
-* The promotion pipeline, which is responsible for promoting the model to `Production` if it is better than the last best version.
-* The deployment pipeline, which deploys the latest `Production` pipeline
-
-Let's run these one by one:
 
 ## Train the model
 
