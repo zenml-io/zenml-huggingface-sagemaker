@@ -205,9 +205,23 @@ Replace `your_access_key_id`, `your_secret_access_key`, and `your_session_token`
 
 There are two paths you can take this with the project. You can 
 
-## 👶 Step 1: Start with feature engineering
+## 📓 Use a Jupyter notebook
 
-## 💪 Step 2: Train the model
+```shell
+# Install jupyter
+pip install notebook
+
+# Go to run.ipynb
+jupyter notebook
+```
+
+## ✍️ Run it locally
+
+If you're note the notebook type, you can use this README to run the pipelines one by one.
+
+### 👶 Step 1: Start with feature engineering
+
+### 💪 Step 2: Train the model
 
 Next, you should look at the CLI help to see what you can do with the project:
   
@@ -232,7 +246,7 @@ At the end of the pipeline, the model will also be pushed the Huggingface, and a
 
 Notice the linkage of the revision made on Huggingface to the metadata tracked on the ZenML pipeline. This estabilishes lineage.
 
-## 🫅 Step 3: Promote the model 
+### 🫅 Step 3: Promote the model 
 
 You can run the training pipeline a few times to produce many versions of the model. Feel free to edit the parameters accordingly.
 When the time is right, you now run the promotion pipeline:
@@ -247,7 +261,7 @@ This pipeline finds the best model from the last pipelines that were run, and pr
 
 <img src="assets/mcp_2.png" alt="Model versions" width="600">
 
-## 💯 Step 4: Deploy the model
+### 💯 Step 4: Deploy the model
 
 Finally, when the time is right, its time to deploy the latest `Production` model!
 
@@ -271,7 +285,7 @@ aws sagemaker list-endpoints
 
 You should see a deployed endpoint to sagemaker.
 
-## 🏃 Step 5: Run the demo app
+### 🏃 Step 5: Run the demo app
 
 ```shell
 cd gradio
