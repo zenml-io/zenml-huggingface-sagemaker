@@ -347,7 +347,7 @@ cd gradio
 python app.py
 ```
 
-<img src="assets/nlp_zenml_demo.png" alt="Demo Sentiment Analysis" width="600">
+<img src="assets/nlp_zenml_demo.png" alt="Demo Sentiment Analysis" width="800">
 
 The demo has two modes: `sagemaker` and `local`. If sagemaker is selected, the client pings ZenML, finds the latest Production model, and uses the associated sagemaker endpoint to make the prediction. Otherwise, it just downloads the model and runs it locally. Naturally, the Sagemaker endpoint will usually be faster!
 
