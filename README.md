@@ -304,8 +304,6 @@ You can run the training pipeline a few times to produce many versions of the mo
 When the time is right, you now run the promotion pipeline:
 
 ```shell
-python run.py --help
-
 python run.py --promoting-pipeline --no-cache
 ```
 
@@ -315,7 +313,9 @@ This pipeline finds the best model from the last pipelines that were run, and pr
 
 #### 💯 Step 4: Deploy the model
 
-Finally, when the time is right, its time to deploy the latest `Production` model!
+Finally, when the time is right, its time to deploy the latest `Production` model with the deploymnet pipeline.
+
+<img src="assets/deploying_pipeline_overview.png" alt="Deploying pipeline" width="600">
 
 ```shell
 python run.py --deploying-pipeline
