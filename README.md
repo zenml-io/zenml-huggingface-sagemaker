@@ -84,7 +84,7 @@
     ·
     <a href="https://zenml.io/discussion">Vote New Features</a>
     ·
-    <a href="https://blog.zenml.io/">Read Blog</a>
+    <a href="https://zenml.io/blog">Read Blog</a>
     ·
     <a href="https://www.zenml.io/company#team">Meet the Team</a>
     <br />
@@ -143,7 +143,7 @@ changes! You can try it right away by installing ZenML, the needed
 ZenML integration and then calling the CLI included in the project.
 
 <details>
-<summary><h3>🏁 Install requirements</h3></summary>
+<summary><h3>Install requirements</h3></summary>
 
 ```bash
 # Clone this repo
@@ -162,7 +162,7 @@ make setup
 </details>
 
 <details>
-<summary><h3>🏁 Connect to a deployed ZenML and register secrets</h3></summary>
+<summary><h3>Connect to a deployed ZenML and register secrets</h3></summary>
 
 After this, you should have ZenML and all of the requirements of the project installed locally.
 Next thing to do is to connect to a [deployed ZenML instance](https://docs.zenml.io/deploying-zenml/). You can
@@ -185,7 +185,7 @@ zenml secret create huggingface_creds --username=HUGGINGFACE_USERNAME --token=HU
 </details>
 
 <details>
-<summary><h3>🏁 Set up your local stack</h3></summary>
+<summary><h3>Set up your local stack</h3></summary>
 
 To run this project, you need to create a [ZenML Stack](https://docs.zenml.io/user-guide/starter-guide/understand-stacks) with the required components to run the pipelines.
 
@@ -198,7 +198,7 @@ zenml stack hf-sagekamer-local
 </details>
 
 <details>
-<summary><h3>🏁 Set up AWS access</h3></summary>
+<summary><h3>Set up AWS access</h3></summary>
 ## 
 
 To deploy to AWS SageMaker, your local AWS client needs the necessary permissions. Ensure that you have been granted SageMaker access on your AWS account. For more information about configuring AWS for programmatic access, refer to the [AWS documentation on setting up the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html).
@@ -237,7 +237,7 @@ If you're note the notebook type, you can use this README to run the pipelines o
 
 <details>
 
-<summary><h3>🏁 Instructions to run locally</h3></summary>
+<summary><h3>Instructions to run locally</h3></summary>
 
 #### 👶 Step 1: Start with feature engineering
 
