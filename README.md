@@ -115,9 +115,7 @@
         </li>
       </ul>
     </li>
-    <li><a href="#-community">Community</a></li>
-    <li><a href="#-contributing">Contributing</a></li>
-    <li><a href="#-license">License</a></li>
+    <li><a href="#-getting-help">Getting Help</a></li>
   </ol>
 </details>
 <br />
@@ -372,24 +370,12 @@ And there you go, you have successfully trained and pushed a model to Huggingfac
 
 </details>
 
-## 🙌 Contributing and Community
-
-ZenML is built with the community. If you notice any bugs or problems in this repository,
-please open an issue and we'll try to get it sorted asap!
-
 ## 🆘 Getting Help
 
 The first point of call should
-be [our Slack group](https://zenml.io/slack/).
+be [the ZenML Slack group](https://zenml.io/slack/).
 Ask your questions about bugs or specific use cases, and someone from
 the [core team](https://zenml.io/company#CompanyTeam) will respond.
 Or, if you
 prefer, [open an issue](https://github.com/zenml-io/zenml-huggingface-sagemaker/issues/new/choose) on
 this GitHub repo.
-
-## 📜 License
-
-This repository is distributed under the terms of the Apache License Version 2.0.
-A complete version of the license is available in the [LICENSE](LICENSE) file in
-this repository. Any contribution made to this project will be licensed under
-the Apache License Version 2.0.
