@@ -29,9 +29,6 @@ settings:
       - slack
       - github
     requirements:
-      - accelerate
-      - zenml[server]
-      - gradio
       - torchvision
       - sagemaker
     dockerfile: Dockerfile
