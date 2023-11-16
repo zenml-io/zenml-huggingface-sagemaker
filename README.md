@@ -267,6 +267,8 @@ Each time you run this pipeline, a new base tokenizer and tokenized dataset is p
 In the dashboard, you can click on these artifacts and note their ID's, as they will be used
 downstream in the training pipeline.
 
+You can watch a YouTube tutorial for this part of the tutorial [here](https://youtu.be/7OTV--X9bKk).
+
 #### 💪 Step 2: Train the model
 
 The training pipeline trains the model on the produced data.
@@ -302,6 +304,8 @@ At the end of the pipeline, the model will also be pushed the Huggingface, and a
 
 Notice the linkage of the revision made on Huggingface to the metadata tracked on the ZenML pipeline. This estabilishes lineage.
 
+You can watch a YouTube tutorial for this part of the tutorial [here](https://youtu.be/YoQoT5eSMek).
+
 #### 🫅 Step 3: Promote the model
 
 You can run the training pipeline a few times to produce many versions of the model. Feel free to edit the parameters accordingly.
@@ -317,6 +321,8 @@ python run.py --promoting-pipeline --no-cache
 This pipeline finds the best model from the last pipelines that were run, and promotes it to production. That simply means its marked as production in the Model Control Plane:
 
 <img src="assets/mcp_2.png" alt="Model versions" width="800">
+
+You can watch a YouTube tutorial for this part of the tutorial [here](https://youtu.be/_A2l3OMezvE).
 
 #### 💯 Step 4: Deploy the model
 
@@ -343,6 +349,8 @@ aws sagemaker list-endpoints
 ```
 
 You should see a deployed endpoint to sagemaker.
+
+You can watch a YouTube tutorial for this part of the tutorial [here](https://youtu.be/0-dSE4vzwHY).
 
 #### 🏃 Step 5: Run the demo app
 
