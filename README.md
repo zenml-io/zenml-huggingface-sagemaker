@@ -128,9 +128,9 @@ This project showcases one way of using [ZenML](https://zenml.io) pipelines to a
 - Promote this model to `Production` by comparing to previous models in a `promotion_pipeline`.
 - Deploy the model at the `Production` Stage to a [AWS Sagemaker](https://aws.amazon.com/pm/sagemaker/) endpoint with a `deployment_pipeline`.
 
-Here is an overview of the process:
+Here is an overview of the entire process:
 
-
+<img src="assets/pipelines_overview.png" alt="Pipelines Overview" width="800">
 
 The above flow is achieved in a repeatable, fully tracked pipeline that is observable across the organization. Let's
 see how this works.
@@ -167,10 +167,6 @@ zenml secret create huggingface_creds --username=HUGGINGFACE_USERNAME --token=HU
 You also need to have your local AWS CLI configured to have Sagemaker endpoint access.
 
 ## A process overview
-
-Here is an overview of the entire process:
-
-<img src="assets/pipelines_overview.png" alt="Pipelines Overview" width="800">
 
 There are three pipelines at play, which all use the ZenML Model Control Plane to communicate with each other.
 
