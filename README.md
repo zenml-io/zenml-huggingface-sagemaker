@@ -222,7 +222,7 @@ style.
 
 You can also watch a full video walkthrough on YouTube:
 
-[![Full Huggingface to Sagemaker ZenML tutorial](https://img.youtube.com/vi/Q1EH2H8Akgo/0.jpg)](https://www.youtube.com/playlist?list=PLhNrLW_IWplw6dBbmGcL828-atJMu3Cw)
+[![Full Huggingface to Sagemaker ZenML tutorial](https://img.youtube.com/vi/Q1EH2H8Akgo/0.jpg)](https://www.youtube.com/watch?v=Q1EH2H8Akgo)
 
 ### 📓 EITHER: Use a Jupyter notebook
 
