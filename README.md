@@ -219,6 +219,8 @@ jupyter notebook
 
 If you're note the notebook type, you can use this README to run the pipelines one by one.
 
+<details>
+
 ### 👶 Step 1: Start with feature engineering
 
 ### 💪 Step 2: Train the model
@@ -297,3 +299,5 @@ python app.py
 The demo has two modes: `sagemaker` and `local`. If sagemaker is selected, the client pings ZenML, finds the latest Production model, and uses the associated sagemaker endpoint to make the prediction. Otherwise, it just downloads the model and runs it locally. Naturally, the Sagemaker endpoint will usually be faster!
 
 And there you go, you have successfully trained and pushed a model to Huggingface, and deplyoed it to AWS Sagemaker, in a ZenML pipeline. Read more on the [ZenML docs](https://docs.zenml.io)
+
+</summary>
