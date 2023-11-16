@@ -152,6 +152,7 @@ cd zenml-huggingface-sagemaker
 # Set up a Python virtual environment, if you haven't already
 python3 -m venv .venv
 source .venv/bin/activate
+
 # Install requirements & integrations
 # Alternatively see the Makefile for commands to use
 make setup
