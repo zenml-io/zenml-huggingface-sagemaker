@@ -135,12 +135,14 @@ Here is an overview of the entire process:
 The above flow is achieved in a repeatable, fully tracked pipeline that is observable across the organization. Let's
 see how this works.
 
-## 👋 Get started
+## 👋 Step 0: Get started
 
 What to do first? You can start by giving the the project a quick run. The
 project is ready to be used and can run as-is without any further code
 changes! You can try it right away by installing ZenML, the needed
 ZenML integration and then calling the CLI included in the project.
+
+### Install requirements
 
 ```bash
 # Set up a Python virtual environment, if you haven't already
@@ -149,10 +151,9 @@ source .venv/bin/activate
 # Install requirements & integrations
 # Alternatively see the Makefile for commands to use
 make setup
-
-# Optionally, provision default local stack
-make install-stack
 ```
+
+### Connect to a deployed ZenML and register secrets
 
 After this, you should have ZenML and all of the requirements of the project installed locally.
 Next thing to do is to connect to a [deployed ZenML instance](https://docs.zenml.io/deploying-zenml/). You can
@@ -166,16 +167,29 @@ zenml connect --url YOUR_ZENML_SERVER_URL
 
 This will open up the browser for your to connect to a deployed ZenML!
 
-Finally, we need to register your Huggingface API token to run this demo. This can be found in your [settings](https://huggingface.co/settings/tokens) page. Register this as a ZenML secret with:
+We now need to register your Huggingface API token to run this demo. This can be found in your [settings](https://huggingface.co/settings/tokens) page. Register this as a ZenML secret with:
 
 ```shell
 zenml secret create huggingface_creds --username=HUGGINGFACE_USERNAME --token=HUGGINGFACE_TOKEN
 ```
 
-You also need to have your local AWS CLI configured to have Sagemaker endpoint access.
+### Set up your local stack
 
+To run this project, you need to create a [ZenML Stack](https://docs.zenml.io/user-guide/starter-guide/understand-stacks) with the required components to run the pipelines.
 
-## Train the model
+```shell
+make install-stack
+
+zenml stack hf-sagekamer-local
+```
+
+### Set up AWS access
+
+In order to deploy to Sagemaker, your local [AWS CLI]()
+
+## 👶 Step 1: Start with feature engineering
+
+## 💪 Train the model
 
 Next, you should look at the CLI help to see what you can do with the project:
   
@@ -200,7 +214,7 @@ At the end of the pipeline, the model will also be pushed the Huggingface, and a
 
 Notice the linkage of the revision made on Huggingface to the metadata tracked on the ZenML pipeline. This estabilishes lineage.
 
-## Promote the model 
+## 🫅 Promote the model 
 
 You can run the training pipeline a few times to produce many versions of the model. Feel free to edit the parameters accordingly.
 When the time is right, you now run the promotion pipeline:
@@ -215,7 +229,7 @@ This pipeline finds the best model from the last pipelines that were run, and pr
 
 <img src="assets/mcp_2.png" alt="Model versions" width="600">
 
-## Deploy the model
+## 💯 Deploy the model
 
 Finally, when the time is right, its time to deploy the latest `Production` model!
 
