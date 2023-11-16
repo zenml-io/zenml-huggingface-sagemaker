@@ -12,7 +12,7 @@
   <!-- PROJECT LOGO -->
   <br />
     <a href="https://zenml.io">
-      <img alt="ZenML Logo" src="docs/book/.gitbook/assets/header.png" alt="ZenML Logo">
+      <img alt="ZenML Logo" src="assets/header.png" alt="ZenML Logo">
     </a>
   <br />
 
