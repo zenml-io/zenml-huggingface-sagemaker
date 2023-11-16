@@ -263,7 +263,9 @@ downstream in the training pipeline.
 
 #### 💪 Step 2: Train the model
 
-Next, you should look at the CLI help to see what you can do with the project:
+The training pipeline trains the model on the produced data.
+
+<img src="assets/training_pipeline_overview.png" alt="Training pipeline" width="600">
   
 ```shell
 python run.py --training-pipeline --num-epochs 1 --train-batch-size 128 --eval-batch-size 12
