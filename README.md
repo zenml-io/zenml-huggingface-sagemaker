@@ -220,6 +220,7 @@ jupyter notebook
 If you're note the notebook type, you can use this README to run the pipelines one by one.
 
 <details>
+<summary>
 
 ### 👶 Step 1: Start with feature engineering
 
