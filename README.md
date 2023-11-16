@@ -301,6 +301,9 @@ Notice the linkage of the revision made on Huggingface to the metadata tracked o
 #### 🫅 Step 3: Promote the model
 
 You can run the training pipeline a few times to produce many versions of the model. Feel free to edit the parameters accordingly.
+
+<img src="assets/promoting_pipeline_overview.png" alt="Promotion pipeline" width="600">
+
 When the time is right, you now run the promotion pipeline:
 
 ```shell
