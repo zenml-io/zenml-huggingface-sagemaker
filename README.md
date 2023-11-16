@@ -145,6 +145,10 @@ ZenML integration and then calling the CLI included in the project.
 ### Install requirements
 
 ```bash
+# Clone this repo
+git clone git@github.com:zenml-io/zenml-huggingface-sagemaker.git
+cd zenml-huggingface-sagemaker
+
 # Set up a Python virtual environment, if you haven't already
 python3 -m venv .venv
 source .venv/bin/activate
@@ -185,11 +189,25 @@ zenml stack hf-sagekamer-local
 
 ### Set up AWS access
 
-In order to deploy to Sagemaker, your local [AWS CLI]()
+To deploy to AWS SageMaker, your local AWS client needs the necessary permissions. Ensure that you have been granted SageMaker access on your AWS account. For more information about configuring AWS for programmatic access, refer to the [AWS documentation on setting up the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html).
+
+Please set the appropriate environment variables for your session with the following export commands:
+
+```shell
+export AWS_ACCESS_KEY_ID=your_access_key_id
+export AWS_SECRET_ACCESS_KEY=your_secret_access_key
+export AWS_SESSION_TOKEN=your_session_token # if you are using temporary credentials
+```
+
+Replace `your_access_key_id`, `your_secret_access_key`, and `your_session_token` with your actual AWS credentials. These credentials will allow your local AWS client to interact securely with SageMaker and other AWS services.
+
+## 🧑‍💻 How To Run This Project
+
+There are two paths you can take this with the project. You can 
 
 ## 👶 Step 1: Start with feature engineering
 
-## 💪 Train the model
+## 💪 Step 2: Train the model
 
 Next, you should look at the CLI help to see what you can do with the project:
   
@@ -214,7 +232,7 @@ At the end of the pipeline, the model will also be pushed the Huggingface, and a
 
 Notice the linkage of the revision made on Huggingface to the metadata tracked on the ZenML pipeline. This estabilishes lineage.
 
-## 🫅 Promote the model 
+## 🫅 Step 3: Promote the model 
 
 You can run the training pipeline a few times to produce many versions of the model. Feel free to edit the parameters accordingly.
 When the time is right, you now run the promotion pipeline:
@@ -229,7 +247,7 @@ This pipeline finds the best model from the last pipelines that were run, and pr
 
 <img src="assets/mcp_2.png" alt="Model versions" width="600">
 
-## 💯 Deploy the model
+## 💯 Step 4: Deploy the model
 
 Finally, when the time is right, its time to deploy the latest `Production` model!
 
@@ -253,7 +271,7 @@ aws sagemaker list-endpoints
 
 You should see a deployed endpoint to sagemaker.
 
-## Run the demo app
+## 🏃 Step 5: Run the demo app
 
 ```shell
 cd gradio
