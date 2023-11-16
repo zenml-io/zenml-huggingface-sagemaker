@@ -135,7 +135,7 @@ Here is an overview of the entire process:
 The above flow is achieved in a repeatable, fully tracked pipeline that is observable across the organization. Let's
 see how this works.
 
-## 👋 Step 0: Get started
+## 👋 Get started
 
 What to do first? You can start by giving the the project a quick run. The
 project is ready to be used and can run as-is without any further code
@@ -206,7 +206,7 @@ Replace `your_access_key_id`, `your_secret_access_key`, and `your_session_token`
 
 There are two paths you can take this with the project. You can 
 
-## 📓 Use a Jupyter notebook
+### 📓 Use a Jupyter notebook
 
 ```shell
 # Install jupyter
@@ -216,7 +216,7 @@ pip install notebook
 jupyter notebook
 ```
 
-## ✍️ Run it locally
+### ✍️ Run it locally
 
 If you're note the notebook type, you can use this README to run the pipelines one by one.
 
