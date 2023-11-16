@@ -1,8 +1,10 @@
-# Huggingface Model to Sagemaker Endpoint: Automating training and deployment with ZenML
+# Huggingface Model to Sagemaker Endpoint: MLOps with ZenML
 
-While almost every Huggingface model can be easily deployed to AWS Sagemaker endpoints, it is often desirous to automate
-this flow. This project showcases one way of using ZenML pipelines to achieve this:
+While almost every Huggingface model can be easily deployed to AWS Sagemaker endpoints with a few lines of code, it is often desirous to automate this flow, and have this process track the entire lineage of the model as it goes from training to production.
 
+This project showcases one way of using ZenML pipelines to achieve this:
+
+- Create and version a dataset 
 - Train/Finetune a Sentiment Analysis NLP model and push to Huggingface Hub
 - Promote this model from staging to production
 - Deploy the model at the `Production` Stage to a Sagemaker endpoint
@@ -24,6 +26,7 @@ is going on under the hood:
 python3 -m venv .venv
 source .venv/bin/activate
 # Install requirements & integrations
+# Alternatively see the Makefile for commands to use
 make setup
 # Optionally, provision default local stack
 make install-stack

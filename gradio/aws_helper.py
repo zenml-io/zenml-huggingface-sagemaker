@@ -3,14 +3,15 @@ import os
 import boto3
 import sagemaker
 
-REGION_NAME = "us-east-1"
-ROLE_NAME = "hamza_connector"
+# Assign default value if env variable not fond
+REGION_NAME = os.getenv("AWS_REGION", "us-east-1")
+ROLE_NAME = os.getenv("AWS_ROLE_NAME", "hamza_connector")
 os.environ["AWS_DEFAULT_REGION"] = REGION_NAME
 
 auth_arguments = {
-    "aws_access_key_id": os.environ["AWS_ACCESS_KEY_ID"],
-    "aws_secret_access_key": os.environ["AWS_SECRET_ACCESS_KEY"],
-    "aws_session_token": os.environ["AWS_SESSION_TOKEN"],
+    "aws_access_key_id": os.getenv("AWS_ACCESS_KEY_ID", None),
+    "aws_secret_access_key": os.getenv("AWS_SECRET_ACCESS_KEY", None),
+    "aws_session_token": os.getenv("AWS_SESSION_TOKEN", None),
     "region_name": REGION_NAME,
 }
 

@@ -15,6 +15,7 @@
 # limitations under the License.
 #
 
+import numpy as np
 from datasets import DatasetDict, load_dataset
 from typing_extensions import Annotated
 from zenml import step
