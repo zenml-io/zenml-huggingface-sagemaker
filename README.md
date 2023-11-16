@@ -12,7 +12,7 @@
   <!-- PROJECT LOGO -->
   <br />
     <a href="https://zenml.io">
-      <img alt="ZenML Logo" src="assets/header.png" alt="ZenML Logo">
+      <img src="assets/header.png" alt="ZenML Logo">
     </a>
   <br />
 
@@ -94,27 +94,32 @@
 ---
 
 <!-- TABLE OF CONTENTS -->
+<!-- TABLE OF CONTENTS -->
 <details>
   <summary>🏁 Table of Contents</summary>
   <ol>
     <li><a href="#-huggingface-model-to-sagemaker-endpoint-mlops-with-zenml">Introduction</a></li>
-    <li><a href="#-quickstart">Quickstart</a></li>
+    <li><a href="#-get-started">Get Started</a></li>
     <li>
-      <a href="#-create-your-own-mlops-platform">Create your own MLOps Platform</a>
+      <a href="#-how-to-run-this-project">How To Run This Project</a>
       <ul>
-        <li><a href="##-1-deploy-zenml">Deploy ZenML</a></li>
-        <li><a href="#-2-deploy-stack-components">Deploy Stack Components</a></li>
-        <li><a href="#-3-create-a-pipeline">Create a Pipeline</a></li>
-        <li><a href="#-4-start-the-dashboard">Start the Dashboard</a></li>
+        <li><a href="#-either-use-a-jupyter-notebook">EITHER: Use a Jupyter notebook</a></li>
+        <li><a href="#-or-run-it-locally">OR: Run it locally</a>
+          <ul>
+            <li><a href="#-step-1-start-with-feature-engineering">Step 1: Start with feature engineering</a></li>
+            <li><a href="#-step-2-train-the-model">Step 2: Train the model</a></li>
+            <li><a href="#-step-3-promote-the-model">Step 3: Promote the model</a></li>
+            <li><a href="#-step-4-deploy-the-model">Step 4: Deploy the model</a></li>
+            <li><a href="#-step-5-run-the-demo-app">Step 5: Run the demo app</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#-roadmap">Roadmap</a></li>
-    <li><a href="#-contributing-and-community">Contributing and Community</a></li>
-    <li><a href="#-getting-help">Getting Help</a></li>
+    <li><a href="#-community">Community</a></li>
+    <li><a href="#-contributing">Contributing</a></li>
     <li><a href="#-license">License</a></li>
   </ol>
 </details>
-
 <br />
 
 # 🤖 Huggingface Model to Sagemaker Endpoint: MLOps with ZenML
@@ -366,3 +371,25 @@ The demo has two modes: `sagemaker` and `local`. If sagemaker is selected, the c
 And there you go, you have successfully trained and pushed a model to Huggingface, and deplyoed it to AWS Sagemaker, in a ZenML pipeline. Read more on the [ZenML docs](https://docs.zenml.io)
 
 </details>
+
+# 🙌 Contributing and Community
+
+ZenML is built with the community. If you notice any bugs or problems in this repository,
+please open an issue and we'll try to get it sorted asap!
+
+# 🆘 Getting Help
+
+The first point of call should
+be [our Slack group](https://zenml.io/slack/).
+Ask your questions about bugs or specific use cases, and someone from
+the [core team](https://zenml.io/company#CompanyTeam) will respond.
+Or, if you
+prefer, [open an issue](https://github.com/zenml-io/zenml-huggingface-sagemaker/issues/new/choose) on
+this GitHub repo.
+
+# 📜 License
+
+This repository is distributed under the terms of the Apache License Version 2.0.
+A complete version of the license is available in the [LICENSE](LICENSE) file in
+this repository. Any contribution made to this project will be licensed under
+the Apache License Version 2.0.
