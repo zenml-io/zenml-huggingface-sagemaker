@@ -372,6 +372,8 @@ And there you go, you have successfully trained and pushed a model to Huggingfac
 
 ## 🆘 Getting Help
 
+Something didn't work? No problem!
+
 The first point of call should
 be [the ZenML Slack group](https://zenml.io/slack/).
 Ask your questions about bugs or specific use cases, and someone from
