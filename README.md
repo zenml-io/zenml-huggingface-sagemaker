@@ -220,6 +220,8 @@ There are two paths you can take this with the project. You can either
 use a notebook or run it in scripts. Choose whichever path suits your learning
 style.
 
+You can also watch a full video walkthrough on YouTube:
+
 [![Full Huggingface to Sagemaker ZenML tutorial](https://img.youtube.com/vi/Q1EH2H8Akgo/0.jpg)](https://www.youtube.com/playlist?list=PLhNrLW_IWplw6dBbmGcL828-atJMu3Cw)
 
 ### 📓 EITHER: Use a Jupyter notebook
