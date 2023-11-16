@@ -302,4 +302,4 @@ The demo has two modes: `sagemaker` and `local`. If sagemaker is selected, the c
 
 And there you go, you have successfully trained and pushed a model to Huggingface, and deplyoed it to AWS Sagemaker, in a ZenML pipeline. Read more on the [ZenML docs](https://docs.zenml.io)
 
-</summary>
+</details>
