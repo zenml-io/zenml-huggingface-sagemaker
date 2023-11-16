@@ -372,12 +372,12 @@ And there you go, you have successfully trained and pushed a model to Huggingfac
 
 </details>
 
-# 🙌 Contributing and Community
+## 🙌 Contributing and Community
 
 ZenML is built with the community. If you notice any bugs or problems in this repository,
 please open an issue and we'll try to get it sorted asap!
 
-# 🆘 Getting Help
+## 🆘 Getting Help
 
 The first point of call should
 be [our Slack group](https://zenml.io/slack/).
@@ -387,7 +387,7 @@ Or, if you
 prefer, [open an issue](https://github.com/zenml-io/zenml-huggingface-sagemaker/issues/new/choose) on
 this GitHub repo.
 
-# 📜 License
+## 📜 License
 
 This repository is distributed under the terms of the Apache License Version 2.0.
 A complete version of the license is available in the [LICENSE](LICENSE) file in
