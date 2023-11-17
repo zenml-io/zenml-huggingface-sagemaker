@@ -15,3 +15,11 @@ RUN apt-get install -y git-lfs
 
 # Clear out the local repository of retrieved package files to reduce the image size
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Initialize Git in the current directory
+# Needed to speed up HF push
+RUN git init
+
+# Install Git LFS
+# Needed to speed up HF push
+RUN git lfs install
