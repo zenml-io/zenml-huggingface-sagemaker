@@ -22,15 +22,11 @@ settings:
     required_integrations:
       - s3
       - kubeflow
-      - huggingface
-      - pytorch
       - mlflow
       - aws
       - slack
       - github
-    # requirements:
-    #   - torchvision
-    #   - sagemaker
+    requirements: requirements.txt
     dockerfile: Dockerfile
     environment:
       AWS_ACCESS_KEY_ID: "Random"
