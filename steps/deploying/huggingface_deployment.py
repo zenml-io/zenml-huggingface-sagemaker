@@ -22,20 +22,7 @@ from typing_extensions import Annotated
 from zenml import log_artifact_metadata, step
 from zenml.client import Client
 from zenml.logger import get_logger
-import subprocess
 
-
-def git_add_commit(message):
-    try:
-        subprocess.check_output(['git', 'add', '../'])
-        subprocess.check_output(['git', 'commit', '-m', message])
-        print("Changes committed")
-    except subprocess.CalledProcessError as e:
-        print("Couldn't commit changes")
-        print("Error: {}".format(e.output))
-
-# Call the function
-git_add_commit("Initial commit")
 
 # Initialize logger
 logger = get_logger(__name__)
