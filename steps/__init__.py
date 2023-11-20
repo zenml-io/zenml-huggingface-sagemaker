@@ -19,6 +19,7 @@
 from .alerts import notify_on_failure, notify_on_success
 from .dataset_loader import (
     data_loader,
+    generate_reference_and_comparison_datasets,
 )
 from .deploying import (
     deploy_hf_to_sagemaker,

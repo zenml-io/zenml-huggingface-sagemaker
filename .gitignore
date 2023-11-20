@@ -179,3 +179,5 @@ gradio/model.safetensors
 zenml_artifact/
 gradio/vocab.txt
 .idea
+
+corpora/
