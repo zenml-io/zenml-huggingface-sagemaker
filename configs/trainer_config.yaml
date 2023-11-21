@@ -19,12 +19,11 @@ settings:
   docker:
     required_integrations:
       - s3
-      - airflow
+      - kubeflow
       - mlflow
       - aws
       - slack
       - github
-      - evidently
     requirements: requirements.txt
     # dockerfile: Dockerfile
     environment:
