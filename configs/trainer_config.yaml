@@ -24,6 +24,7 @@ settings:
       - aws
       - slack
       - github
+      - evidently
     requirements: requirements.txt
     # dockerfile: Dockerfile
     environment:
