@@ -273,7 +273,11 @@ def main(
     # Execute Promoting Pipeline
     if promoting_pipeline:
         run_args_promoting = {}
-        model_config = ModelConfig(name=zenml_model_name)
+        # Promoting pipeline always check latest version
+        model_config = ModelConfig(
+            name=zenml_model_name,
+            version=ModelStages.LATEST,
+        )
         pipeline_args["config_path"] = os.path.join(config_folder, "promoting_config.yaml")
 
         pipeline_args["model_config"] = model_config
