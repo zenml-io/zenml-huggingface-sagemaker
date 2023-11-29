@@ -23,7 +23,7 @@ import click
 from zenml.client import Client
 from zenml.enums import ModelStages
 from zenml.logger import get_logger
-from zenml.model import ModelConfig
+from zenml.model.model_version import ModelVersion
 
 from pipelines import (
     sentinment_analysis_deploy_pipeline,
@@ -200,7 +200,7 @@ def main(
             os.path.dirname(os.path.realpath(__file__)),
             "configs",
     )
-    model_config = ModelConfig(
+    model_version = ModelVersion(
         name=zenml_model_name,
         license="Apache 2.0",
         description="Show case Model Control Plane.",
@@ -216,7 +216,7 @@ def main(
 
     # Execute Feature Engineering Pipeline
     if feature_pipeline:
-        pipeline_args["model_config"] = model_config
+        pipeline_args["model_version"] = model_version
         pipeline_args["config_path"] = os.path.join(config_folder, "feature_engineering_config.yaml")
         run_args_feature = {
             "max_seq_length": max_seq_length,
@@ -259,7 +259,7 @@ def main(
             run_args_train["dataset_artifact_id"] = tokenized_dataset_artifact.id
             run_args_train["tokenizer_artifact_id"] = tokenized_tokenizer_artifact.id
 
-        pipeline_args["model_config"] = model_config
+        pipeline_args["model_version"] = model_version
 
         pipeline_args[
             "run_name"
@@ -274,13 +274,13 @@ def main(
     if promoting_pipeline:
         run_args_promoting = {}
         # Promoting pipeline always check latest version
-        model_config = ModelConfig(
+        model_version = ModelVersion(
             name=zenml_model_name,
             version=ModelStages.LATEST,
         )
         pipeline_args["config_path"] = os.path.join(config_folder, "promoting_config.yaml")
 
-        pipeline_args["model_config"] = model_config
+        pipeline_args["model_version"] = model_version
 
         pipeline_args[
             "run_name"
@@ -294,11 +294,11 @@ def main(
         pipeline_args["config_path"] = os.path.join(config_folder, "deploying_config.yaml")
 
         # Deploying pipeline has new ZenML model config
-        model_config = ModelConfig(
+        model_version = ModelVersion(
             name=zenml_model_name,
             version=ModelStages.PRODUCTION,
         )
-        pipeline_args["model_config"] = model_config
+        pipeline_args["model_version"] = model_version
         pipeline_args["enable_cache"] = False
         run_args_deploying = {}
         pipeline_args[

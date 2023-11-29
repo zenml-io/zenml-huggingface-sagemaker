@@ -80,11 +80,12 @@ def deploy_to_huggingface(
         repo_id=hf_repo.repo_id,
         repo_type="model",
     )
-
     log_artifact_metadata(
-        output_name="huggingface_url",
-        repo_id=hf_repo.repo_id,
-        revision=repo_commits[0].commit_id,
+        artifact_name="huggingface_url",
+        metadata={
+            "repo_id": hf_repo.repo_id,
+            "revision": repo_commits[0].commit_id,
+        },
     )
 
     logger.info(f"Model updated: {url}")
