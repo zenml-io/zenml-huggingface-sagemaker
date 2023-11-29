@@ -49,8 +49,8 @@ def deploy_hf_to_sagemaker(
     #  Otherwise, use the provided values.
     if repo_id is None or revision is None:
         context = get_step_context()
-        mv = context.model_config._get_model_version()
-        deployment_metadata = mv.get_artifact_object(name="huggingface_url").metadata
+        mv = context.model_version
+        deployment_metadata = mv.get_data_artifact(name="huggingface_url").run_metadata
         repo_id = deployment_metadata["repo_id"].value
         revision = deployment_metadata["revision"].value
 
